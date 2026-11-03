@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reglas · Constellation · OrbitCX</title>
+<link rel="icon" href="assets/img/favicon.svg">
+<!-- Estilos compartidos de la suite + estilos propios de Constellation -->
+<link rel="stylesheet" href="../orbitcx-ui/v1/orbit.css">
+<link rel="stylesheet" href="assets/css/constellation.css">
+<!-- Va en el <head> para aplicar el tema claro/oscuro antes de pintar la página -->
+<script src="../orbitcx-ui/v1/orbit.js"></script>
+</head>
+<body data-page="reglas">
+<div class="ox-app">
+  <!-- El menú lateral lo arma constellation.js -->
+  <aside class="ox-side" id="ox-side"></aside>
+  <main class="ox-main">
+    <div id="encabezado"></div>
+    <div id="contenido"></div>
+    <footer class="ox-footer" id="pie"></footer>
+  </main>
+</div>
+<!-- Integración: tickets de Comet y ranking de Mission Control (si las carpetas no están, la página lo avisa) -->
+<script src="../orbitcx-comet/assets/js/comet-data.js"></script>
+<script src="../orbitcx-comet/assets/js/comet-tickets.js"></script>
+<script src="../orbitcx-mission-control/assets/js/mission-data.js"></script>
+<!-- Constellation: reglas del puntaje, cálculo y por último las páginas -->
+<script src="assets/js/constellation-data.js"></script>
+<script src="assets/js/constellation-puntaje.js"></script>
+<script src="assets/js/constellation.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+/* =========================================================
+   CONSTELLATION — Estilos propios del módulo
+   ---------------------------------------------------------
+   Lo general viene de orbitcx-ui/v1/orbit.css. Acá solo está
+   lo específico de Constellation. Las clases empiezan con "cs-".
+   ========================================================= */
+
+#contenido { display: grid; gap: 18px; align-content: start; min-width: 0; }
+.cs-nota { font-size: 13px; margin: 0 0 12px; }
+
+/* ---------- Bloques (barra estilo videojuego) ---------- */
+.cs-bloques { display: inline-flex; gap: 2px; vertical-align: middle; margin-right: 6px; }
+.cs-bloques i { width: 7px; height: 12px; border-radius: 2px; background: var(--ox-surface-2); border: 1px solid var(--ox-border); }
+
+/* ---------- Constelación ---------- */
+.cs-constelacion { display: block; width: 100%; height: auto; overflow: visible; }
+.cs-constelacion .cs-lineas line { stroke: var(--ox-faint); stroke-width: 1; stroke-dasharray: 3 3; opacity: .7; }
+.cs-constelacion text { font: 500 9px var(--ox-font-body); fill: var(--ox-muted); }
+.cs-constelacion.is-mini { width: 56px; flex: none; }
+.cs-constelacion.is-grande { max-width: 420px; margin: 0 auto; }
+
+.cs-nivel {
+  display: inline-flex; gap: 6px; align-items: center; white-space: nowrap;
+  font: 500 12px var(--ox-font-body); padding: 3px 10px; border-radius: 999px;
+  background: color-mix(in srgb, var(--ox-constellation) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ox-constellation) 35%, transparent);
+  color: var(--ox-text);
+}
+.cs-total { font: 700 40px/1 var(--ox-font-display); }
+.cs-total small { font-size: 15px; color: var(--ox-muted); font-weight: 500; }
+.cs-total-chico { font: 700 22px var(--ox-font-display); color: var(--ox-accent); }
+
+/* ---------- Ranking ---------- */
+.cs-podio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: end; }
+.cs-podio-lugar {
+  display: grid; gap: 8px; justify-items: center; text-align: center;
+  color: var(--ox-text); text-decoration: none; position: relative;
+}
+.cs-podio-lugar:hover { border-color: var(--ox-accent); }
+.cs-podio-lugar .cs-constelacion { max-width: 200px; }
+/* El primero va en el medio y más alto */
+.cs-lugar-1 { order: 2; padding-top: 30px; padding-bottom: 30px; border-color: color-mix(in srgb, var(--ox-constellation) 55%, var(--ox-border)); }
+.cs-lugar-2 { order: 1; }
+.cs-lugar-3 { order: 3; }
+.cs-medalla { position: absolute; top: 10px; left: 14px; font-size: 26px; }
+
+.cs-tabla { min-width: 980px; }
+.cs-tabla td small { font-size: 12px; color: var(--ox-muted); }
+.cs-agente { display: flex; align-items: center; gap: 10px; color: var(--ox-text); text-decoration: none; }
+.cs-total-tabla { font: 700 20px var(--ox-font-display); }
+
+/* ---------- Ficha ---------- */
+.cs-ficha { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; align-items: start; }
+.cs-ficha-estrella { display: grid; gap: 12px; justify-items: center; text-align: center; }
+.cs-alerta {
+  font-size: 13px; padding: 10px 12px; border-radius: 10px; text-align: left;
+  background: color-mix(in srgb, var(--ox-warn) 12%, var(--ox-surface));
+  border: 1px solid color-mix(in srgb, var(--ox-warn) 40%, var(--ox-border));
+}
+.cs-desglose { display: grid; gap: 14px; }
+.cs-componente { display: grid; gap: 6px; }
+.cs-componente-cabeza { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.cs-componente-puntos { margin-left: auto; font-weight: 600; }
+.cs-componente .cs-bloques i { width: 100%; }
+.cs-componente .cs-bloques { display: grid; grid-template-columns: repeat(10, 1fr); width: 100%; }
+
+.cs-evolucion { display: flex; align-items: flex-end; gap: 14px; height: 180px; padding-top: 10px; }
+.cs-evolucion-columna { flex: 1; height: 100%; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; gap: 6px; }
+.cs-evolucion-columna i { width: 100%; max-width: 56px; border-radius: 6px 6px 0 0; opacity: .85; }
+.cs-evolucion-columna b { font-size: 13px; }
+.cs-evolucion-columna small { font-size: 12px; color: var(--ox-muted); }
+
+/* ---------- Reglas ---------- */
+.cs-resumen-pesos { display: flex; flex-wrap: wrap; gap: 10px; }
+.cs-resumen-pesos span {
+  padding: 8px 14px; border-radius: 999px; font-size: 14px;
+  background: color-mix(in srgb, var(--c) 12%, var(--ox-surface));
+  border: 1px solid color-mix(in srgb, var(--c) 35%, var(--ox-border));
+}
+.cs-resumen-pesos b { color: var(--c); font-family: var(--ox-font-display); }
+
+/* ---------- Cargar datos ---------- */
+.cs-fuente { display: grid; gap: 10px; align-content: start; border-top: 3px solid var(--c); }
+.cs-fuente h3 { display: flex; align-items: center; gap: 8px; }
+.cs-fuente .ox-planet { width: 28px; height: 28px; }
+.cs-criterios { display: grid; gap: 10px; margin: 12px 0 16px; }
+.cs-numero { width: 100px; }
+.cs-aviso {
+  padding: 10px 14px; border-radius: 10px; font-size: 14px;
+  background: color-mix(in srgb, var(--ox-ok) 12%, var(--ox-surface));
+  border: 1px solid color-mix(in srgb, var(--ox-ok) 40%, var(--ox-border));
+}
+
+@media (max-width: 900px) {
+  .cs-ficha { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .cs-podio { grid-template-columns: 1fr; }
+  .cs-lugar-1, .cs-lugar-2, .cs-lugar-3 { order: 0; padding-top: 20px; padding-bottom: 20px; }
+  .cs-total { font-size: 32px; }
+}
